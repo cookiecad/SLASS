@@ -16,7 +16,17 @@ Unfortunately, to my knowledge most slicers do not currently expose an API (henc
 Creating configuration files on the fly is the easiest starting point and should cover most scenarios.
 
 # Road Map
-The minimum viable product should 
+We will start with PrusaSlicer.
+
+Generate data files
+* Write a script to read in Prusa slicer config files and generate a json file listing every option.
+* create a master list of common slicer settings. We can put in just a few main ones to start
+* In the prusa settings config, map the master name to the ps setting. All other settings will be considered ps specific until mapped.
+
+Create slice function
+* The input is a file to slice, a set of master settings and slicer specific settings and the slicer to use
+* for ps, generate a config bundle from the settings, then execute ps from the cli to generate gcode
+
 
 # Licensing
 The plan is to license the code under a commercial software friendly license, such as MIT. To avoid distributing other slicer code, we can add the ability to download those during setup from the official repositories.
